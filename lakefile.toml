@@ -1,0 +1,6 @@
+name = "SIDEDarkInterface"
+version = "0.2.0"
+defaultTargets = ["SIDEDarkInterface"]
+
+[[lean_lib]]
+name = "SIDEDarkInterface"
