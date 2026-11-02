@@ -1,6 +1,10 @@
 # SIDE-dark-interface v0.2
 
-Kernel verification of the κ-measurements for mathematical communication and cognitive interfaces.
+SIDE-dark-interface compiles lookups in a table entered by hand. Statements at f4a1ea6:
+
+    theorem nl_dark_for_validity : kappa_x100 .validity .natural_language = 0 (SIDEDarkInterface/Basic.lean :58)
+
+The entries of kappa_x100 are inputs: the kernel checks what follows from the table and measures nothing.
 
 ```
 κ(validity, natural_language)     = 0
@@ -8,8 +12,6 @@ Kernel verification of the κ-measurements for mathematical communication and co
 κ(universality, natural_language) = 1
 κ(universality, type_system)      = 0
 ```
-
-Natural language is silent for validity. The type system is bright for validity, achieved by narrowing universality. The two-leg architecture composes both legs to achieve brightness on both axes.
 
 ## Status
 
@@ -25,25 +27,16 @@ Companion paper: `DARK_INTERFACE_SUBMISSION.md`. Related: `UNIFIED_COGNITIVE_SCI
 ## What's verified
 
 ### §1–§2 — Media and κ measurements
-Four media: `natural_language`, `type_system`, `formal_subset_of_NL`, `two_leg_architecture`. Two parameters: `validity`, `universality`. Direct κ measurements: `nl_dark_for_validity`, `ts_bright_for_validity`, `nl_bright_for_universality`, `ts_dark_for_universality`.
-
-### §3 — Complementarity
-Pure media saturate the trade-off at validity + universality = 100 (`pure_media_at_trade_off`). The two-leg architecture sums to 200 (`two_leg_exceeds_trade_off`) by composing two complementary legs.
-
-### §4 — The Silence Principle applied to communication media
-Natural language: essential, universal, dark for validity. Type system: essential, narrow, bright for validity (narrowing is the mechanism of validity-brightness). Formal notation embedded in natural language: essential, narrow, dark for validity.
+Four media: `natural_language`, `type_system`, `formal_subset_of_NL`, `two_leg_architecture`. Two parameters: `validity`, `universality`.
 
 ### §5 — Two-leg architecture
-`two_leg_validity_bright`: validity via type-system leg. `two_leg_universality_bright`: universality via natural-language leg. `two_leg_both_bright`: bright on both axes.
+`two_leg_both_bright`: bright on both axes.
 
 ### §6 — Cognitive interfaces
-Six cognitive interfaces with their κ values: passive lecture (0), active learning (50), type-checked proof (100), peer review through natural language alone (0), working memory to long-term memory (0), attention to perception (0). The silent set theorem `cognitive_silent_set_all_dark`.
-
-### §7 — Validity-certified proof
-A proof certifies validity iff it contains at least one inference step through a bright-validity interface. `nl_only_no_certification`, `two_leg_certifies`.
+The silent set theorem `cognitive_silent_set_all_dark`.
 
 ### §8 — Falsification routes
-Three falsification routes catalogued in their own section. Each names the specific structural condition that would falsify a corresponding load-bearing claim.
+Three falsification routes catalogued in their own section.
 
 ## Build
 
@@ -58,7 +51,6 @@ Self-contained — no Mathlib.
 | Kernel | Role |
 |---|---|
 | SIDE-silence-principle | Essential ∧ universal ⇒ silent (the engine) |
-| **SIDE-dark-interface** | **The engine applied to communication and cognitive interfaces** |
 | SIDE-compression | Chain length = N requires a bright-validity step |
 | SIDE-kernel | Sieve Ceiling Lemma uses the validity-certified proof theorem |
 
@@ -72,4 +64,3 @@ CC-BY 4.0.
 
 `:: → · ← ::`
 
-*Natural language transmits the form of reasoning. Type systems transmit correctness by narrowing form.*
